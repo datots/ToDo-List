@@ -1,3 +1,19 @@
+/* Apply the animation to the delete button */
+.delete {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  animation: bounce 0.5s infinite;
+}
+
+/* Add hover effect */
+.delete:hover {
+  background-color: darkred;
+}
+
 /* Basic Style */
 body {
   background-color: #f8f8f8;
@@ -13,7 +29,6 @@ body {
 .task {
   width: 56%;
   display: inline-block;
-  flex-grow: 1;
 }
 .task-row-wrapper {
   display: flex;
@@ -104,14 +119,6 @@ li > em {
 li > input[type="text"] {
   width: 226px;
 }
-button.delete img {
-  height: 2em;
-  transform: rotateZ(45deg);
-  transition: transform 200ms ease-in;
-}
-button.delete img:hover {
-  transform: rotateZ(0);
-}
 
 /* Completed */
 ul#completed-tasks em {
@@ -131,4 +138,21 @@ ul li.editMode input[type="text"] {
 
 ul li.editMode em {
   display: none;
+}
+
+/* Remove Button */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
 }

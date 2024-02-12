@@ -1,12 +1,48 @@
-//Document is the DOM can be accessed in the console with document.window.
-// Tree is from the top, html, body, p etc.
+// MAIN CONTAINER
+const mainContainer = document.createElement("section");
+mainContainer.classList.add("centered-main-page-element");
+document.body.appendChild(mainContainer);
 
-//Problem: User interaction does not provide the correct results.
-//Solution: Add interactivity so the user can manage daily tasks.
-//Break things down into smaller steps and take each step at a time.
+const mainH1 = document.createElement("h1");
+mainH1.setAttribute("id", "topSectionForAddingElementToList");
 
+mainContainer.appendChild(mainH1);
 
-// Event handling, user interaction is what starts the code execution.
+const subH1 = document.createElement("h1");
+subH1.textContent = "Add Item";
+subH1.setAttribute("for", "new-task");
+mainH1.appendChild(subH1);
+
+const subSection = document.createElement("section");
+subSection.classList.add("task-row-wrapper");
+mainH1.appendChild(subSection);
+
+let input = document.createElement("input");
+input.setAttribute("id", "new-task");
+input.setAttribute("type", "text");
+input.classList.add("task");
+subSection.appendChild(input);
+
+const button = document.createElement("button");
+button.textContent = "Add";
+subSection.appendChild(button);
+
+const secondH1 = document.createElement("h1");
+secondH1.textContent = "Todo";
+mainContainer.appendChild(secondH1);
+
+let userList = document.createElement("ul");
+userList.setAttribute("id", "incompleteTasks");
+mainContainer.appendChild(userList);
+
+const thirdH1 = document.createElement("h1");
+thirdH1.textContent = "Completed";
+mainContainer.appendChild(thirdH1);
+
+let secondUserList = document.createElement("ul");
+secondUserList.setAttribute("id", "completed-tasks");
+mainContainer.appendChild(secondUserList);
+// MAIN CONTAINER
 
 var taskInput=document.getElementById("new-task");//Add a new task.
 var addButton=document.getElementsByTagName("button")[0];//first button
